@@ -14,6 +14,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
@@ -25,6 +26,8 @@ import { ContainerComponent } from './shared/container/container.component';
 import { CardDepoimentoComponent } from './shared/card-depoimento/card-depoimento.component';
 import { CardBuscaComponent } from './shared/card-busca/card-busca.component';
 import { FormBuscaComponent } from './shared/form-busca/form-busca.component';
+import { ModalComponent } from './shared/modal/modal.component';
+import { BotaoControleComponent } from './shared/botao-controle/botao-controle.component';
 
 const imports = [
   BrowserModule,
@@ -40,7 +43,8 @@ const imports = [
   MatFormFieldModule,
   MatInputModule,
   MatDatepickerModule,
-  MatNativeDateModule
+  MatNativeDateModule,
+  MatDialogModule
 ];
 
 const declarations = [
@@ -57,7 +61,9 @@ const declarations = [
 ]
 @NgModule({
   declarations: [
-    ...declarations
+    ...declarations,
+    ModalComponent,
+    BotaoControleComponent
   ],
   imports: [
     ...imports,
