@@ -6,8 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./card-depoimento.component.scss']
 })
 export class CardDepoimentoComponent {
-  longText = `The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog
-  from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was
-  originally bred for hunting.`;
+  depoimento: string = `
+    Recomendo fortemente a agência de viagens Jornada.
+    Eles oferecem um serviço personalizado e de alta qualidade
+    que excedeu minhas expectativas em minha última viagem.
+  `
+  autoria: string = 'Mariana Faustino'
 
 }

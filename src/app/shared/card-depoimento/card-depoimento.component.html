@@ -1,15 +1,14 @@
-<mat-card class="example-card">
-  <mat-card-header>
-    <mat-card-title-group>
-      <mat-card-title>Shiba Inu</mat-card-title>
-      <mat-card-subtitle>Small</mat-card-subtitle>
-      <img
-        mat-card-sm-image
-        src="https://material.angular.io/assets/img/examples/shiba2.jpg"
-      />
-    </mat-card-title-group>
-  </mat-card-header>
+<mat-card class="depoimento">
   <mat-card-content>
-    {{ longText }}
+    <img
+      src="assets/imagens/avatar3.png"
+      alt="Avatar da pessoa autora do depoimento"
+    />
+    <ul>
+      <li>{{ depoimento }}</li>
+      <li>
+        <strong>{{ autoria }}</strong>
+      </li>
+    </ul>
   </mat-card-content>
 </mat-card>
