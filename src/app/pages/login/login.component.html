@@ -16,28 +16,45 @@
       <mat-card-header>
         <mat-card-title>Login</mat-card-title>
       </mat-card-header>
-      <form>
+      <form [formGroup]="loginForm">
         <mat-card-content>
           <mat-form-field appearance="outline">
             <mat-label>E-mail</mat-label>
             <input
+              formControlName="email"
               matInput
               type="email"
               placeholder="Digite seu e-mail"
               required
             />
+            <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
+              E-mail é obrigatório
+            </mat-error>
+            <mat-error *ngIf="loginForm.get('email')?.hasError('email')">
+              E-mail inválido
+            </mat-error>
           </mat-form-field>
           <mat-form-field appearance="outline">
             <mat-label>Senha</mat-label>
             <input
+              formControlName="senha"
               matInput
               type="password"
               placeholder="Digite sua senha"
               required
             />
+            <mat-error *ngIf="loginForm.get('senha')?.hasError('required')">
+              Senha é obrigatória
+            </mat-error>
           </mat-form-field>
           <mat-card-actions>
-            <button mat-raised-button color="primary" type="submit">
+            <button
+              [disabled]="loginForm.invalid"
+              (click)="login()"
+              mat-raised-button
+              color="primary"
+              type="submit"
+            >
               Acessar minha conta
             </button>
           </mat-card-actions>

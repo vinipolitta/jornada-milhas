@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MenuItem, MenuService } from 'src/app/core/services/menu.service';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  buttons = [
-    { label: 'Vender milhas', type: 'text', route: '/vender-milhas' },
-    { label: 'Sobre', type: 'text', route: '/sobre' },
-    { label: 'CADASTRE-SE', type: 'raised', route: '/cadastro' },
-    { label: 'LOGIN', type: 'stroked', route: '/login' }
-  ];
+  buttons: MenuItem[] = [];
+
+  constructor(private menuService: MenuService) { }
+
+  ngOnInit() {
+    this.buttons = this.menuService.getMenuItems();
+  }
 }

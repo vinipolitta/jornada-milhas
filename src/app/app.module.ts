@@ -26,6 +26,9 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { ModalComponent } from './shared/modal/modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatDividerModule  } from '@angular/material/divider';
+import { MatRadioModule } from '@angular/material/radio'; // Importar Módulo
+
 
 import { BotaoControleComponent } from './shared/botao-controle/botao-controle.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -35,6 +38,8 @@ import { DropdownUfComponent } from './shared/form-busca/dropdown-uf/dropdown-uf
 import { SeletorPassageiroComponent } from './shared/seletor-passageiro/seletor-passageiro.component';
 import { DepoimentosComponent } from './pages/home/depoimentos/depoimentos.component';
 import { LoginComponent } from './pages/login/login.component';
+import { FormBaseComponent } from './shared/form-base/form-base.component';
+import { CadastroComponent } from './pages/cadastro/cadastro.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +59,9 @@ import { LoginComponent } from './pages/login/login.component';
     DropdownUfComponent,
     SeletorPassageiroComponent,
     DepoimentosComponent,
-    LoginComponent
+    LoginComponent,
+    FormBaseComponent,
+    CadastroComponent
   ],
   imports: [
     BrowserModule,
@@ -73,7 +80,10 @@ import { LoginComponent } from './pages/login/login.component';
     MatDialogModule,
     HttpClientModule,
     ReactiveFormsModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatCardModule,
+    MatDividerModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]
