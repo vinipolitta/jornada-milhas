@@ -2,10 +2,26 @@
   <mat-toolbar>
     <img src="assets/imagens/logo.png" alt="Logo da aplicação Jornada">
     <span class="spacer"></span>
-    <button mat-button>Vender milhas</button>
-    <button mat-button>Sobre</button>
-    <button mat-raised-button color="primary">CADASTRE-SE</button>
-    <button mat-stroked-button>LOGIN</button>
+    <ng-container *ngFor="let button of buttons">
+      <button
+        *ngIf="button.type === 'text'"
+        mat-button
+        [routerLink]="button.route">
+        {{ button.label }}
+      </button>
+      <button
+        *ngIf="button.type === 'raised'"
+        mat-raised-button
+        color="primary"
+        [routerLink]="button.route">
+        {{ button.label }}
+      </button>
+      <button
+        *ngIf="button.type === 'stroked'"
+        mat-stroked-button
+        [routerLink]="button.route">
+        {{ button.label }}
+      </button>
+    </ng-container>
   </mat-toolbar>
 </header>
-

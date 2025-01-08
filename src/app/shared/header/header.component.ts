@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-
+  buttons = [
+    { label: 'Vender milhas', type: 'text', route: '/vender-milhas' },
+    { label: 'Sobre', type: 'text', route: '/sobre' },
+    { label: 'CADASTRE-SE', type: 'raised', route: '/cadastro' },
+    { label: 'LOGIN', type: 'stroked', route: '/login' }
+  ];
 }
