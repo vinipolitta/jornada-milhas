@@ -10,7 +10,7 @@ import { AutenticacaoService, LoginData } from 'src/app/core/services/autenticac
 })
 export class LoginComponent implements OnInit {
   public loginForm!: FormGroup;
-
+  public routerLink = '/cadastro'
   constructor(
     private fb: FormBuilder,
     private autenticacaoService: AutenticacaoService,

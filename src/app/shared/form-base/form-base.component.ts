@@ -1,19 +1,27 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  FormGroup,
+  FormControl,
+  Validators,
+  FormBuilder,
+} from '@angular/forms';
 import { UnidadeFederativa } from 'src/app/core/types/type';
 
 @Component({
   selector: 'app-form-base',
   templateUrl: './form-base.component.html',
-  styleUrls: ['./form-base.component.scss']
+  styleUrls: ['./form-base.component.scss'],
 })
-export class FormBaseComponent implements OnInit{
+export class FormBaseComponent implements OnInit {
   cadastroForm!: FormGroup;
-  estadoControl = new FormControl<UnidadeFederativa | null>(null, Validators.required);
+  estadoControl = new FormControl<UnidadeFederativa | null>(
+    null,
+    Validators.required
+  );
+  @Input() perfilComponent!: boolean;
+  @Output() cadastro: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor(
-    private formBuilder: FormBuilder
-  ) { }
+  constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit() {
     this.cadastroForm = this.formBuilder.group({
@@ -28,7 +36,12 @@ export class FormBaseComponent implements OnInit{
       estado: this.estadoControl,
       confirmarEmail: [null, [Validators.required, Validators.email]],
       confirmarSenha: [null, [Validators.required, Validators.minLength(3)]],
-      aceitarTermos: [null, [Validators.requiredTrue]]
+      aceitarTermos: [null, [Validators.requiredTrue]],
     });
+  }
+
+  public cadastrar() {
+    console.log('CASTRO: ', this.cadastroForm.value);
+    this.cadastro.emit(this.cadastroForm.value);
   }
 }
