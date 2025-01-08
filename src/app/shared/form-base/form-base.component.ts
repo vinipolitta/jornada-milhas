@@ -5,6 +5,7 @@ import {
   Validators,
   FormBuilder,
 } from '@angular/forms';
+import { FormularioService } from 'src/app/core/services/formulario.service';
 import { UnidadeFederativa } from 'src/app/core/types/type';
 
 @Component({
@@ -21,7 +22,10 @@ export class FormBaseComponent implements OnInit {
   @Input() perfilComponent!: boolean;
   @Output() cadastro: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private formularioService: FormularioService
+  ) {}
 
   ngOnInit() {
     this.cadastroForm = this.formBuilder.group({
@@ -38,6 +42,8 @@ export class FormBaseComponent implements OnInit {
       confirmarSenha: [null, [Validators.required, Validators.minLength(3)]],
       aceitarTermos: [null, [Validators.requiredTrue]],
     });
+
+    this.formularioService.setCadastro(this.cadastroForm);
   }
 
   public cadastrar() {
