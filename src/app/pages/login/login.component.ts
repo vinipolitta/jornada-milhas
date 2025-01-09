@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
     console.log("teste login", this.loginForm.value);
 
     this.autenticacaoService.login(this.loginForm.value).subscribe({
-      next: (value: LoginData) => console.log('Success:', value),
+      next: (value) => console.log('Success:', value),
       error: (error) => console.error('Error ao realizar o login:', error),
       complete: () => {
         console.log("complete login");

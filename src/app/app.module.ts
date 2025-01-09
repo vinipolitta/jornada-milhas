@@ -41,6 +41,7 @@ import { DepoimentosComponent } from './pages/home/depoimentos/depoimentos.compo
 import { LoginComponent } from './pages/login/login.component';
 import { FormBaseComponent } from './shared/form-base/form-base.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
+import { PerfilComponent } from './pages/perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { CadastroComponent } from './pages/cadastro/cadastro.component';
     DepoimentosComponent,
     LoginComponent,
     FormBaseComponent,
-    CadastroComponent
+    CadastroComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,
