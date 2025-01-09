@@ -25,7 +25,7 @@ export class CadastroComponent {
       this.cadastroService.cadastrar(novoCadastro).subscribe({
         next: (value) => {
           console.log('Cadastro realizado com sucesso!', value);
-          this.perfilComponent = true;
+          // this.perfilComponent = true;
         },
         error: (error) => {
           console.error('Erro ao realizar cadastro:', error);
